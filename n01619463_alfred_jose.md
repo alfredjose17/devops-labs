@@ -1,3 +1,3 @@
 ## Lab 1
 
-Setting up git and github for labs.
+Setting up git and github for devops labs.
