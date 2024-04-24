@@ -1,0 +1,67 @@
+{
+  "chaoslib-version": "1.42.1",
+  "platform": "Linux-5.15.146.1-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+  "node": "AJ-Humber",
+  "experiment": {
+    "version": "1.0.0",
+    "title": "What happens if we terminate a Pod?",
+    "description": "If a Pod is terminated, a new one should be created in its places.",
+    "tags": [
+      "k8s",
+      "pod"
+    ],
+    "method": [
+      {
+        "type": "action",
+        "name": "terminate-pod",
+        "provider": {
+          "type": "python",
+          "module": "chaosk8s.pod.actions",
+          "func": "terminate_pods",
+          "arguments": {
+            "label_selector": "app=sample-app",
+            "rand": true,
+            "ns": "default"
+          }
+        }
+      }
+    ],
+    "dry": null
+  },
+  "start": "2024-03-22T04:57:38.214956",
+  "status": "completed",
+  "deviated": false,
+  "steady_states": {
+    "before": null,
+    "after": null,
+    "during": []
+  },
+  "run": [
+    {
+      "activity": {
+        "type": "action",
+        "name": "terminate-pod",
+        "provider": {
+          "type": "python",
+          "module": "chaosk8s.pod.actions",
+          "func": "terminate_pods",
+          "arguments": {
+            "label_selector": "app=sample-app",
+            "rand": true,
+            "ns": "default"
+          }
+        }
+      },
+      "output": [
+        "sample-app-7cd7859d45-m5827"
+      ],
+      "start": "2024-03-22T04:57:38.215388",
+      "status": "succeeded",
+      "end": "2024-03-22T04:57:38.244004",
+      "duration": 0.028616
+    }
+  ],
+  "rollbacks": [],
+  "end": "2024-03-22T04:57:38.244537",
+  "duration": 0.030431509017944336
+}

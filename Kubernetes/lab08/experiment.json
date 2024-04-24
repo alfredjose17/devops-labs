@@ -1,0 +1,9 @@
+{
+    "title": "pod exists",
+    "description": "N/A",
+    "tags": [],
+    "steady-state-hypothesis": {
+        "title": "deployment works",
+        "probes": []
+    }
+}
